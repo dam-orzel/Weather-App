@@ -1,0 +1,33 @@
+body,
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  padding: 0 10%;
+}
+
+input,
+textarea,
+button {
+  outline: none;
+  resize: none;
+}
+
+input,
+textarea {
+  color: $white;
+  font-size: 12px;
+  background: $bwood;
+  border: 2px solid $bwood;
+  border-radius: 15px;
+  padding: 10px 20px;
+  margin: 0 0 15px 0;
+  width: 100%;
+  transition: 0.3s;
+  &:focus {
+    border: 2px solid $heliotrope;
+    border-radius: 20px;
+  }
+}
