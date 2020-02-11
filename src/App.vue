@@ -18,8 +18,11 @@ export default {
 
 <style lang="scss">
 #app {
-  height: 100vh;
+  height: calc(100vh - 40px);
   width: 100vw;
-  background: $vulcan;
+  background: url("~@/assets/images/main_background.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 20px 0;
 }
 </style>

@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:200,400,600,700&display=swap&subset=latin-ext");
+
 body,
 * {
   margin: 0;
@@ -18,16 +20,23 @@ button {
 input,
 textarea {
   color: $white;
-  font-size: 12px;
+  font-size: 16px;
   background: $bwood;
   border: 2px solid $bwood;
   border-radius: 15px;
   padding: 10px 20px;
   margin: 0 0 15px 0;
-  width: 100%;
+  width: 300px;
   transition: 0.3s;
   &:focus {
     border: 2px solid $heliotrope;
     border-radius: 20px;
   }
+}
+
+p,
+span,
+input,
+button {
+  font-family: montserrat, sans-serif;
 }
