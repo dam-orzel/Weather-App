@@ -26,11 +26,6 @@
           </div>
         </div>
       </transition>
-      <div class="last-searched">
-        <ul>
-          <li v-for="item in locationList" :key="item">{{item}}</li>
-        </ul>
-      </div>
     </div>
   </section>
 </template>
@@ -39,8 +34,8 @@
 export default {
   data() {
     return {
-      weather_api: "d4309394c1f05e511c79a76c3992237d",
-      base_api: "https://api.openweathermap.org/data/2.5/",
+      weather_api: this.$store.state.weather_api,
+      base_api: this.$store.state.base_api,
       location: "",
       weather: {},
       lastUsed: this.$store.state.location,
@@ -63,7 +58,9 @@ export default {
         this.errorInput = true;
       } else {
         this.$store.commit("addLocation", this.location);
+        this.$store.commit("changeBackground", this.weather.weather[0].main);
         this.errorInput = false;
+        document.title = "Weather App | " + this.location;
       }
       this.location = "";
     },
@@ -125,7 +122,7 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: rgba(15, 21, 33, 0.3);
+    background: rgba(15, 21, 33, 0.7);
     padding: 30px 0;
     border-radius: 10px;
     p {
@@ -174,6 +171,28 @@ export default {
       .weatherDescription {
         font-size: 14px;
         font-weight: 200;
+      }
+    }
+    @media (max-width: 980px) and (orientation: landscape) {
+      padding: 20px 0;
+      margin-top: 30%;
+      .location {
+        font-size: 20px;
+      }
+      .date {
+        font-size: 12px;
+      }
+      .weather-box {
+        .temperature {
+          font-size: 56px;
+          margin: 10px 0;
+        }
+        .weatherStatus {
+          font-size: 16px;
+        }
+        .weatherDescription {
+          font-size: 12px;
+        }
       }
     }
   }

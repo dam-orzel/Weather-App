@@ -1,15 +1,18 @@
+// Import Fonts
 @import url("https://fonts.googleapis.com/css?family=Montserrat:200,400,600,700&display=swap&subset=latin-ext");
 
+//  Clear margin
 body,
 * {
   margin: 0;
   padding: 0;
 }
-
+// Global wrapper
 .wrapper {
   padding: 0 10%;
 }
 
+// Clear Inputs
 input,
 textarea,
 button {
@@ -17,6 +20,7 @@ button {
   resize: none;
 }
 
+// Input styles
 input,
 textarea {
   color: $white;
@@ -34,6 +38,7 @@ textarea {
   }
 }
 
+// Global font
 p,
 span,
 input,
