@@ -57,10 +57,10 @@ export default {
       if (this.weather.main == undefined) {
         this.errorInput = true;
       } else {
-        this.$store.commit("addLocation", this.location);
+        this.$store.commit("addLocation", this.weather.name);
         this.$store.commit("changeBackground", this.weather.weather[0].main);
         this.errorInput = false;
-        document.title = "Weather App | " + this.location;
+        document.title = "Weather App | " + this.weather.name;
       }
       this.location = "";
     },
